@@ -11,7 +11,6 @@ def commit_suppressor():
         exit()
     start_date, end_date, folderpath = init()
 
-    #Calculate the number of days between the start and end date
     start_date = datetime.strptime(start_date, '%Y-%m-%d')
     end_date = datetime.strptime(end_date, '%Y-%m-%d')
     rdate = (end_date - start_date).days
@@ -21,8 +20,8 @@ def commit_suppressor():
         date = start_date + timedelta(days=day)
         commit_nb = random.randint(1, 5)
         print(f"Generating {commit_nb} commits for day {date.strftime('%Y-%m-%d')}")
-        for commit_num in range(1, 5):  # 4 commits per day
-            commit_time = date + timedelta(hours=commit_num * 6)  # 6-hour interval between commits
+        for commit_num in range(1, 5): 
+            commit_time = date + timedelta(hours=commit_num * 6)  
             commit_message = f"Commit {commit_num} on {date.strftime('%Y-%m-%d')}"
             
             filename = f"file_{date.strftime('%Y%m%d')}_{commit_num}.txt"
@@ -47,7 +46,6 @@ def commit_generator():
         exit()
     start_date, end_date, folderpath = init()
 
-    #Calculate the number of days between the start and end date
     start_date = datetime.strptime(start_date, '%Y-%m-%d')
     end_date = datetime.strptime(end_date, '%Y-%m-%d')
     rdate = (end_date - start_date).days
@@ -57,8 +55,8 @@ def commit_generator():
         date = start_date + timedelta(days=day)
         commit_nb = random.randint(1, 5)
         print(f"Generating {commit_nb} commits for day {date.strftime('%Y-%m-%d')}")
-        for commit_num in range(1, 5):  # 4 commits per day
-            commit_time = date + timedelta(hours=commit_num * 6)  # 6-hour interval between commits
+        for commit_num in range(1, 5): 
+            commit_time = date + timedelta(hours=commit_num * 6)
             commit_message = f"Commit {commit_num} on {date.strftime('%Y-%m-%d')}"
             
             filename = f"file_{date.strftime('%Y%m%d')}_{commit_num}.txt"
